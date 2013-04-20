@@ -10,9 +10,11 @@ set :user, 'roadt'
 set :use_sudo, false
 
 role :web, "venus"                          # Your HTTP server, Apache/etc
-role :app, "venus"                          # This may be the same as your `Web` server
+role :app,"venus"                         # This may be the same as your `Web` server
 role :db,  "venus", :primary => true # This is where Rails migrations will run
-
+role :db, "oldman"
+role :web, "oldman"
+role :app, "oldman"
 
 # if you want to clean up old releases on each deploy uncomment this:
 after "deploy:restart", "deploy:cleanup"
@@ -28,27 +30,6 @@ after "deploy:restart", "deploy:cleanup"
 #     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
 #   end
 # end
-
-
-
-role :libs, 'venus'
-role :files, 'oldman'
-
-task :search_libs, :roles => :libs  do
-  run 'ls -x1 /usr/lib/ |grep -i xml'
-end
-
-task :count_libs, roles => :libs  do
-  run 'ls -x1 /usr/lib/ | wc -l '
-end
-
-task :show_free_space, :roles => :files do
-  run "df -h /"
-end
-
-task :rubygems do
-  run 'bundle'
-end
 
 after :bundle_gems, :deploy
 

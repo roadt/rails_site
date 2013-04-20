@@ -12,4 +12,4 @@ require: []
 max_persistent_conns: 512
 servers: 4
 daemonize: true
-chdir: /var/www/apps/current
+#chdir: /var/www/apps/current
