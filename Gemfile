@@ -36,5 +36,5 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 # To use debugger
-gem 'thin', '== 1.5.1'
+gem 'thin'
 
