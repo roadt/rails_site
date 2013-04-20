@@ -45,3 +45,31 @@ end
 task :show_free_space, :roles => :files do
   run "df -h /"
 end
+
+task :rubygems do
+  run 'bundle'
+end
+
+after :bundle_gems, :deploy
+
+# If you are using Passenger mod_rails uncomment this:
+namespace :deploy do
+#   task :start do ; end
+#   task :stop do ; end
+#   task :restart, :roles => :app, :except => { :no_release => true } do
+#     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+#   end
+
+  task :start do ;
+    run "cd #{current_path} && bundle exec thin start -C config/thin.yml"
+  end
+  
+  task :stop do 
+        run "cd #{current_path} && bundle exec thin stop -C config/thin.yml"
+  end
+
+  task :bundle_gems do
+    run "cd #{deploy_to}/current && bundle install --deployment"
+  end
+ end
+
