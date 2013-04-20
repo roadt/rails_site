@@ -1,0 +1,10 @@
+# Logfile created on 2012-10-08 23:49:47 +0800 by logger.rb/31641
+D, [2012-10-08T23:49:47.287237 #11422] DEBUG -- : TRACING ON 2012-10-08 23:49:47 +0800
+D, [2012-10-08T23:49:50.817502 #11422] DEBUG -- : FILES OPEN AT EXIT
+D, [2012-10-08T23:49:50.819590 #11422] DEBUG -- : ---
+log/mongrel_debug/objects.log: 2
+log/mongrel_debug/access.log: 1
+log/mongrel_debug/files.log: 1
+log/mongrel_debug/threads.log: 1
+log/mongrel_debug/rails.log: 1
+
