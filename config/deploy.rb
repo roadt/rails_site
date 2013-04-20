@@ -61,15 +61,19 @@ namespace :deploy do
 #   end
 
   task :start do ;
-    run "cd #{current_path} && bundle exec thin start -C config/thin.yml"
+    run "cd #{current_path} && bundle exec thin  -C config/thin.yml start"
   end
   
   task :stop do 
-        run "cd #{current_path} && bundle exec thin stop -C config/thin.yml"
+        run "cd #{current_path} && bundle exec thin -C config/thin.yml stop"
   end
 
   task :bundle_gems do
-    run "cd #{deploy_to}/current && bundle install --deployment"
+    run "cd #{deploy_to}/current && bundle install"
   end
- end
+
+  task :info do
+    run "echo #{current_path}"
+  end
+end
 
