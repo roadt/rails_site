@@ -1,6 +1,6 @@
 source 'http://ruby.taobao.org'
 
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.13'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -16,12 +16,11 @@ group :assets do
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
-#  gem 'twitter-bootstrap-rails'
 
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails', '~>2.1'
+gem 'jquery-rails', '2.2.1'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -30,11 +29,11 @@ gem 'jquery-rails', '~>2.1'
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn', '4.6.2'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+gem 'capistrano', '2.14.2'
+gem 'thin', '1.5.1'
 
 # To use debugger
-gem 'thin'
-
+# gem 'debugger'

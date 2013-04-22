@@ -2,7 +2,7 @@
 
 require ::File.expand_path('../config/environment',  __FILE__)
 
-require 'middleware/test'
-use ::TT::TestMiddleware
+#require 'middleware/test'
+#use ::TT::TestMiddleware
 
 run Blog::Application
