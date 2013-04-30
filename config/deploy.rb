@@ -35,9 +35,11 @@ after :bundle_gems, :deploy
 
 # If you are using Passenger mod_rails uncomment this:
 namespace :deploy do
-#   task :restart, :roles => :app, :except => { :no_release => true } do
-#     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-#   end
+   task :restart, :roles => :app, :except => { :no_release => true } do
+     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+    stop
+    start
+   end
 
   task :start do ;
     run "cd #{current_path} && bundle exec thin  -C config/thin.yml start"
