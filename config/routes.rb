@@ -1,4 +1,8 @@
 Blog::Application.routes.draw do
+  get "test/index"
+
+  get "test/env"
+
   get "home/index"
 
   # The priority is based upon order of creation:
