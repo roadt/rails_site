@@ -40,3 +40,10 @@ gem 'thin', '1.5.1'
 
 # To use debugger
 # gem 'debugger'
+
+
+
+
+##
+gem 'nokogiri', '1.5.9'
+gem 'data_mapper', '1.2.0'

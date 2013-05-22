@@ -1,4 +1,7 @@
 Blog::Application.routes.draw do
+  resources :shows
+
+
   get "test/index"
 
   get "test/env"
