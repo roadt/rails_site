@@ -17,7 +17,14 @@ role :db,  "venus", :primary => true # This is where Rails migrations will run
 #role :app, "oldman"
 
 # if you want to clean up old releases on each deploy uncomment this:
+
 after "deploy:restart", "deploy:cleanup"
+after "deploy:upload",  "deploy:restart"
+
+before 'deploy:migrate', 'deploy:dbcreate'
+after  'deploy:update_code', 'deploy:bundle_gems'
+
+
 
 # if you're still using the script/reaper helper you will need
 # these http://github.com/rails/irs_process_scripts
