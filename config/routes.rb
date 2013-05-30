@@ -1,5 +1,9 @@
 Blog::Application.routes.draw do
-  resources :shows
+  resources :shows do 
+    member do
+      get 'run'
+    end
+  end
 
 
   get "test/index"

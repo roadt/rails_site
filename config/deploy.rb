@@ -31,7 +31,8 @@ after "deploy:restart", "deploy:cleanup"
 #   end
 # end
 
-after :bundle_gems, :deploy
+before 'deploy:migrate', 'deploy:dbcreate'
+after  'deploy:update_code', 'deploy:bundle_gems'
 
 # If you are using Passenger mod_rails uncomment this:
 namespace :deploy do
