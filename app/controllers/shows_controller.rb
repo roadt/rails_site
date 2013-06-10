@@ -1,5 +1,5 @@
 class ShowsController < ApplicationController
-  http_basic_authenticate_with :name => "test", :password => "p123", :except => :show
+  http_basic_authenticate_with :name => "test", :password => "p123", :except => :run
   # GET /shows
   # GET /shows.json
   def index
