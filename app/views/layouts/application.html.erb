@@ -5,10 +5,20 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <%= yield (:head) %>
 </head>
-<body style="background: #EEEEEE">
-
-<%= yield %>
-
-</body>
+<body>
+    <div class="container">
+      <div id="user_nav">
+        TODO: User nav
+      </div>
+      <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, :id=>"flash_#{name}" %>
+      <% end %>
+<!--     
+         <%# content_tag :h1, yield(:title) if show_title? %>
+-->
+      <%= yield %>
+    </div>
+  </body>
 </html>
