@@ -1,15 +1,19 @@
 Blog::Application.routes.draw do
+    namespace :mercury do
+      resources :images, :only=> [:create, :destroy]
+    end
+
+#  mount Mercury::Engine => '/'
+
   resources :shows do 
     member do
-      get 'run'
+#      get 'run'
     end
   end
 
 
   get "test/index"
-
   get "test/env"
-
   get "home/index"
 
   # The priority is based upon order of creation:

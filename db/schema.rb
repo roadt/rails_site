@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130522034230) do
+ActiveRecord::Schema.define(:version => 20130829105519) do
 
   create_table "comments", :force => true do |t|
     t.string   "commenter"
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(:version => 20130522034230) do
 
   add_index "comments", ["post_id"], :name => "index_comments_on_post_id"
 
+  create_table "mercury_images", :force => true do |t|
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
   create_table "posts", :force => true do |t|
     t.string   "name"
     t.string   "title"
@@ -31,11 +40,23 @@ ActiveRecord::Schema.define(:version => 20130522034230) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "shows", :force => true do |t|
-    t.string   "name"
-    t.text     "code"
+  create_table "show_data", :force => true do |t|
+    t.string   "host"
+    t.integer  "port"
+    t.string   "user"
+    t.string   "pass"
+    t.string   "db"
+    t.string   "table"
+    t.integer  "show_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "shows", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
 end

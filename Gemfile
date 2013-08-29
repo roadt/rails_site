@@ -1,4 +1,5 @@
-source 'http://ruby.taobao.org'
+#source 'http://ruby.taobao.org'
+source 'http://venus/mirrors/ruby/'
 
 gem 'rails', '3.2.13'
 
@@ -25,6 +26,11 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+#
+# editor 
+gem 'mercury-rails', '~>0.9'
+gem 'wmd-rails', '~> 0.0.7'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -47,3 +53,4 @@ gem 'thin', '1.5.1'
 ##
 gem 'nokogiri', '1.5.9'
 gem 'data_mapper', '1.2.0'
+gem 'paperclip'

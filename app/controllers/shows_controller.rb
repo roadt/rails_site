@@ -1,5 +1,6 @@
 class ShowsController < ApplicationController
   http_basic_authenticate_with :name => "test", :password => "p123", :except => :run
+
   # GET /shows
   # GET /shows.json
   def index
@@ -15,19 +16,13 @@ class ShowsController < ApplicationController
   # GET /shows/1.json
   def show
     @show = Show.find(params[:id])
+    @show_data = @show.show_data
     respond_to do |format|
       format.html 
       format.json { render json: @show }
     end
   end
 
-  def run 
-    @show = Show.find(params[:id])
-    code = @show.code
-    result = eval(code)
-    render :text => "<pre>#{result}</prev>"
-  end
-    
   # GET /shows/new
   # GET /shows/new.json
   def new
