@@ -17,13 +17,10 @@
   </div>
   <div class="field">
     <%= f.label :description %><br />
-    <div class="row-fluid">
-      <p id="wmd-preview" class="span6 preview"></p>
-      <div class="span6 editor">
-      <div id="wmd-button-bar"></div>
-      <%= f.text_area :description, 'id'=>'wmd-input' %>
-      </div>
-    </div>
+    <%= f.text_area :description, 'id'=>'description_editor' %>
+    <script type="text/javascript">
+      UE.getEditor("description_editor", { emotionLocalization:true, iframeUrlMap: true});
+    </script>
   </div>
   <div class="actions">
     <%= f.submit %>

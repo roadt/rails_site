@@ -2,8 +2,8 @@
 <html>
 <head>
   <title>Blog</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <%= find_and_include_asset "application" %>
+  <%= find_and_include_asset(params[:controller]) if params[:controller] %>
   <%= csrf_meta_tags %>
   <%= yield (:head) %>
 </head>

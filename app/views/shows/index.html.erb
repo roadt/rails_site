@@ -3,7 +3,7 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Code</th>
+    <th>Description</th>
     <th></th>
     <th></th>
     <th></th>
@@ -12,8 +12,7 @@
 <% @shows.each do |show| %>
   <tr>
     <td><%= show.name %></td>
-    <td><%= show.code %></td>
-    <td><%= link_to 'Run', run_show_path(show) %></td>
+    <td><%= raw show.description %></td>
     <td><%= link_to 'Show', show %></td>
     <td><%= link_to 'Edit', edit_show_path(show) %></td>
     <td><%= link_to 'Destroy', show, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,0 +1,10 @@
+  <div class="field">
+    <%= f.label :description %><br />
+    <div class="row-fluid">
+      <p id="wmd-preview" class="span6 preview"></p>
+      <div class="span6 editor">
+      <div id="wmd-button-bar"></div>
+      <%= f.text_area :description, 'id'=>'wmd-input' %>
+      </div>
+    </div>
+  </div>

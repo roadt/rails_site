@@ -9,10 +9,8 @@
 </p>
 
 <p>
-  <b>Code:</b>
-  <pre>
-    <%= @show.description %>
-  </pre>
+  <b>Description:</b>
+  <%= raw @show.description %>
 </p>
 
 <%= link_to 'Edit', edit_show_path(@show) %> |

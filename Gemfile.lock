@@ -1,3 +1,8 @@
+PATH
+  remote: /home/srv/git/github/roadt/ueditor-rails
+  specs:
+    ueditor-rails (0.0.0)
+
 GEM
   remote: http://venus/mirrors/ruby/
   specs:
@@ -223,6 +228,7 @@ DEPENDENCIES
   therubyracer (= 0.10.2)
   thin (= 1.5.1)
   twitter-bootstrap-rails (= 2.2.6)
+  ueditor-rails!
   uglifier (>= 1.0.3)
   unicorn (= 4.6.2)
   wmd-rails (~> 0.0.7)
