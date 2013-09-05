@@ -1,5 +1,6 @@
-PATH
-  remote: /home/srv/git/github/roadt/ueditor-rails
+GIT
+  remote: git://oldman/github/roadt/ueditor-rails
+  revision: 53fdcba13a1673335f702f3b23770c177037b6d1
   specs:
     ueditor-rails (0.0.0)
 
