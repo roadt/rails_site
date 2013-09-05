@@ -1,3 +1,64 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.post {
+    background-color:white;
+    -webkit-box-shadow: 1px 2px 3px #ddd;
+    box-shadow: 1px 2px 3px #ddd;
+
+    label { 
+        display:none;
+    }
+
+    input { 
+        padding-right: 1%;
+        padding-left: 1%;
+        width: 98%;
+
+        &[type="text"] {
+                    font-weight: bold;
+                    font-size: 2em;
+        }
+    }        
+
+
+    .post-content {
+        padding: 20px 20px 15px 77px;
+        margin-bottom: 30px;
+        
+        .head {
+            margin-bottom:1em;
+            .title { 
+                display:inline;
+                font-size: 2em;
+                font-weight: bold;
+            }
+            a { text-decoration: none ; }
+
+        }
+
+        .body {
+        }
+
+        
+    }
+}
+
+.comments {
+    padding: 20px;
+    background-color: white;
+
+    h2 {    
+        border-bottom: 1px solid #eee;
+        margin-bottom: 0.5em;    
+    }
+
+    .comment {
+        margin: 0.5em;
+        border-bottom: 1px #eee solid;
+
+        h3 { }
+        blockquote { margin-left: 1em;}
+    }
+}

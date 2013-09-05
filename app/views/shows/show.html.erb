@@ -1,8 +1,5 @@
-<p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_show_path(@show) %> |
-<%= link_to 'Back', shows_path %>
-
+<div class="show">
 <p>
   <b>Name:</b>
   <%= @show.name %>
@@ -12,6 +9,6 @@
   <b>Description:</b>
   <%= raw @show.description %>
 </p>
-
 <%= link_to 'Edit', edit_show_path(@show) %> |
 <%= link_to 'Back', shows_path %>
+</div>

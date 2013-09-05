@@ -2,9 +2,20 @@ class Mercury::ImagesController < MercuryController
 
   respond_to :json
 
+  def index
+    @images = Mercury::Image.all
+
+    respond_with @images
+  end
+
+  def new
+  end
+
   # POST /images.json
   def create
-    @image = Mercury::Image.new(params[:image])
+    image = params[:image]
+    logger.info image
+    @image = Mercury::Image.new(:image=>image)
     @image.save
     respond_with @image
   end

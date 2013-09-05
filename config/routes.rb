@@ -1,7 +1,17 @@
 Blog::Application.routes.draw do
     namespace :mercury do
-      resources :images, :only=> [:create, :destroy]
+      resources :images#, :only=> [:create, :destroy]
     end
+  
+  namespace :ueditor do
+    resources :images do 
+      collection do 
+        post :upload
+        match :manage
+      end
+    end
+    resource :attachments
+  end
 
 #  mount Mercury::Engine => '/'
 

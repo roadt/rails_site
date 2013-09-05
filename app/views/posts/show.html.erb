@@ -1,27 +1,26 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @post.name %>
-</p>
+<div class="post">
 
-<p>
-  <b>Title:</b>
-  <%= @post.title %>
-</p>
+  <div class="post-content">
+    <h1 class="hidden"><%= @post.name %></h1>
+    <h1 class="title"><%= link_to @post.title, @post %></h1>
+    <p class="body" >
+      <%= raw @post.content %>
+    </p>
+  </div>
+</div>
 
-<p>
-  <b>Content:</b>
-  <%= @post.content %>
-</p>
-
-<h2>Comments</h2>
-<%= render @post.comments %>
+<div class="comments">
+  <h2>Comments</h2>
+  
+  <%= render @post.comments %>
 
 
-
-<h2>Add a comment:</h2>
-<%= render "comments/form" %>
+  <div class="add">
+    <h2>Add a comment:</h2>
+    <%= render "comments/form" %>
+  </div>
+</div>
 
 <br />
 

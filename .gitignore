@@ -17,6 +17,7 @@
 
 # ignore the precompile assets
 /public/assets/
+/public/system/
 
 # ignore sass cache
 .sass-cache

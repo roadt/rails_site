@@ -1,4 +1,6 @@
 module ApplicationHelper
+
+
   def find_and_include_asset_css(name)
     if Rails.application.assets.find_asset(ensure_suffix(name, ".css"))
       stylesheet_link_tag(name) 
@@ -27,4 +29,5 @@ module ApplicationHelper
       name
     end
   end
+
 end

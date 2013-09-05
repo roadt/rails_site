@@ -1,0 +1,163 @@
+
+/*                 Fonts                      */
+@import url("http://fonts.googleapis.com/css?family=Lato:400,400italic");
+@font-face {
+    font-family: 'FontAwesome';
+    font-style: normal;
+    font-weight: normal;
+    src: url("font/fontawesome-webfont.eot?#iefix") format('embedded-opentype'), url("font/fontawesome-webfont.woff") format('woff'), url("font/fontawesome-webfont.ttf") format('truetype'), url("font/fontawesome-webfont.svg#FontAwesomeRegular") format('svg');
+}
+
+body {
+    background: #eee;
+    color: #444;
+    font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+    font-size: 14px;
+    text-shadow: 0 0 1px transparent;
+}
+
+@media screen and (max-width: 1260px) {
+    body {
+        margin: 0 30px;
+    }
+}
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 13px;
+    }
+}
+
+#user_nav {
+    float: right; 
+
+}
+.header {
+    background-color: #eee;
+    height: 100px;
+
+    color: gray; 
+
+
+    h1 { float: left ; }
+    p {float:right;}
+
+    
+    a { 
+        color: #808080;
+        text-decoration: none;
+    }
+}
+
+#header {
+    margin-top: 3em;
+}
+
+.footer {
+    background-color: #eee;
+}
+
+.main {
+    margin: 5em auto;
+}
+
+.center {
+    text-align : center;
+}
+
+.alignleft {
+    float: left;
+}
+.alignright {
+    float: right;
+}
+.clearfix {
+    zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+
+.flash { 
+    background-color:white;
+}
+
+/* responsive  two column layout */
+
+
+.inner {
+    width: 1200px;
+    margin: 0 auto;
+}
+.main-col {
+    width: 900px;
+    float:left;
+}
+
+.sidebar {
+    width: 270px;
+    line-height: 1.8em;
+    float: right;
+    background-color:white;
+    margin-bottom: 50px;
+}
+
+@media screen and (max-width: 1260px) {
+    .inner {
+        width: 100%;
+    }
+
+    .main-col {
+        width: 100%;
+        margin-right: -300px;
+        float:left;
+    }
+    .main-col .wrapper {
+        margin-right: 300px;
+    }
+
+}
+
+@media screen and (max-width: 900px) {
+    .main-col {
+        min-width: 320px;
+        margin-right: 0;
+        float: none;
+    }
+
+    .main-col .wrapper {
+        margin-right: 0;
+    }
+    .sidebar {
+        float: none;
+        width: 100%;
+    }
+
+}
+
+
+
+/* make image, embed resize correspoding to container */
+img{
+    max-width:100%;
+    height:auto;
+}
+
+embed {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.hidden {
+    display:none;
+}
+
+input[type="text"] {
+    border: 1px solid #DDD;
+    padding: 5px 10px;
+}

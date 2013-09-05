@@ -4,6 +4,8 @@ class PostsController < ApplicationController
 
   # GET /posts
   # GET /posts.json
+  http_basic_authenticate_with :name => "test", :password => "p123", :except=>[:index, :show]
+
   def index
 #    puts caller
     @posts = Post.all

@@ -1,11 +1,16 @@
+<h1>Listing posts</h1>
 
-<div class="posts">
-
-  <%= render @posts %>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Title</th>
+    <th>Content</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
 
 <% @posts.each do |post| %>
-<div class="post">
-<!--
   <tr>
     <td><%= post.name %></td>
     <td><%= post.title %></td>
@@ -13,10 +18,10 @@
     <td><%= link_to 'Show', post %></td>
     <td><%= link_to 'Edit', edit_post_path(post) %></td>
     <td><%= link_to 'Destroy', post, :method=>:delete, data: { confirm: 'Are you sure?' } %></td>
--->
-</div>
-
+  </tr>
 <% end %>
-</div>
+</table>
+
+<br />
 
 <%= link_to 'New Post', new_post_path %>

@@ -1,24 +1,47 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Blog</title>
-  <%= find_and_include_asset "application" %>
-  <%= find_and_include_asset(params[:controller]) if params[:controller] %>
-  <%= csrf_meta_tags %>
-  <%= yield (:head) %>
-</head>
-<body>
-    <div class="container">
-      <div id="user_nav">
-        TODO: User nav
-      </div>
-      <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, :id=>"flash_#{name}" %>
-      <% end %>
-<!--     
-         <%# content_tag :h1, yield(:title) if show_title? %>
--->
-      <%= yield %>
+  <head>
+    <title>Blog</title>
+    <%= find_and_include_asset "application" %>
+    <%= find_and_include_asset(params[:controller]) if params[:controller] %>
+    <%= csrf_meta_tags %>
+    <%= yield (:head) %>
+  </head>
+  <body>
+    <div id="header" class="header inner">
+      <h1>Road Tang's Site</h1>
+      <p class="nav alignright">
+        <%= link_to "Home",  root_path %> 
+        <%= link_to "GitHub", "https://github.com/roadt"%>
+      </p>
     </div>
-  </body>
+
+
+    <div id="content" class="inner">
+
+      <div class="sidebar" style="background-color:white; height: 500px;">
+        <div class="widget tags"></div>
+        <div class="widget tweets"></div>
+      </div>
+
+      <div  class="main-col pull-left">
+        <div class="wrapper">
+          <div class="flash">
+          <% flash.each do |name, msg| %>
+          <%= content_tag :div, msg, :id=>"flash_#{name}" %>
+          <% end %>
+          <!--     
+                   <%# content_tag :h1, yield(:title) if show_title? %>
+                   -->
+          </div>
+          <%= yield %>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+
+</div>
+<div class="footer">
+</div>
+</body>
 </html>

@@ -1,0 +1,13 @@
+<div class="post">
+  <div class="post-content">
+    <h1 class="hidden"><%= post.name %></h1>
+    <p class="head">
+      <span class="title"><%= link_to post.title, post %></span>
+      <%= link_to 'Edit', edit_post_path(post) %>
+    </p>
+    <p class="body" >
+      <%= raw post.content %>
+    </p>
+    <%= link_to "More..", post_path(post) %>
+  </div>
+</div>

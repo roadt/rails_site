@@ -58,11 +58,16 @@ namespace :deploy do
   end
 
   task :bundle_gems do
-    run "cd #{deploy_to}/current && bundle install"
+    run "cd #{release_path}/current && bundle install"
   end
 
   task :info do
     run "echo #{current_path}"
   end
+
+  task :dbcreate, :roles =>:db do
+        run "cd #{release_path} && bundle exec rake db:create"
+  end
+
 end
 

@@ -9,29 +9,6 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require  scaffolds
- = require bootstrap_and_overrides
+  = require  scaffolds_new
+ require bootstrap_and_overrides
  */
-
-body {
-    background-color: #4b7299;
-}
-
-#user_nav {
-    float: right; 
-
-}
-.container {
-    margin: 5em auto;
-    padding: 2em;
-    width: 900px;
-    border: 2px solid black;
-    background-color: white;
-}
-
-
-.center {
-    text-align : center;
-}
-
-

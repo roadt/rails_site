@@ -221,7 +221,7 @@ DEPENDENCIES
   mercury-rails (~> 0.9)
   mysql2
   nokogiri (= 1.5.9)
-  paperclip
+  paperclip (~> 3.4.1)
   rails (= 3.2.13)
   sass-rails (~> 3.2.3)
   sqlite3

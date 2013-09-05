@@ -54,4 +54,4 @@ gem 'thin', '1.5.1'
 ##
 gem 'nokogiri', '1.5.9'
 gem 'data_mapper', '1.2.0'
-gem 'paperclip'
+gem 'paperclip', '~> 3.4.1'
