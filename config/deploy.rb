@@ -1,14 +1,20 @@
 set :application, "blog"
-set :repository,  "git://oldman/prjs/rails/blog"
 
+
+# Source control system.
  set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
+set :repository,  "git://oldman/prjs/rails/blog"
+set :deploy_via, :remote_cache
+# set :user, 'deployer'
+# set :scm_passphrase "p@ss"
+set :branch, "ueditor"
 
 
 #set :gateway,  'somegateway.'
 set :user, 'roadt'
 set :use_sudo, false
-
+set :rake,      "bundle exec rake"
 role :web, "venus"                          # Your HTTP server, Apache/etc
 role :app,"venus"                         # This may be the same as your `Web` server
 role :db,  "venus", :primary => true # This is where Rails migrations will run
@@ -38,9 +44,6 @@ after  'deploy:update_code', 'deploy:bundle_gems'
 #   end
 # end
 
-before 'deploy:migrate', 'deploy:dbcreate'
-after  'deploy:update_code', 'deploy:bundle_gems'
-
 # If you are using Passenger mod_rails uncomment this:
 namespace :deploy do
    task :restart, :roles => :app, :except => { :no_release => true } do
@@ -50,7 +53,7 @@ namespace :deploy do
    end
 
   task :start do ;
-    run "cd #{current_path} && bundle exec thin  -C config/thin.yml start"
+    run "cd #{current_path}  &&  bundle exec thin  -C config/thin.yml start"
   end
   
   task :stop do 
@@ -58,7 +61,7 @@ namespace :deploy do
   end
 
   task :bundle_gems do
-    run "cd #{release_path}/current && bundle install"
+    run "cd #{release_path} && bundle install"
   end
 
   task :info do
@@ -66,7 +69,7 @@ namespace :deploy do
   end
 
   task :dbcreate, :roles =>:db do
-        run "cd #{release_path} && bundle exec rake db:create"
+        run "cd #{release_path} && #{rake} db:create"
   end
 
 end
