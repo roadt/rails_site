@@ -13,10 +13,13 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.ui.all
+//= require jquery.tagsinput
 //= require twitter/bootstrap
 //= require_tree .
 //=require wmd/wmd
 //=require wmd/showdown
+
+
 
 $(function() {
       new WMDEditor({

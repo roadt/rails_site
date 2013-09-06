@@ -59,3 +59,5 @@ gem 'paperclip', '~> 3.4.1'
 
 
 gem 'acts-as-taggable-on', '2.4.1'
+#gem 'tagmanager-rails', '0.0.2'
+gem 'tagsinput-rails', '1.3.3.1'

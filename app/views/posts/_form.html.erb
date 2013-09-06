@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :tag_list %><br />
-    <%= f.text_field :tag_list %>
+    <%= f.text_field :tag_list, :class=>"tm-input", :placeholder=>"Tags" %>
   </div>
   <div class="field">
     <%= f.label :content %><br />
@@ -33,4 +33,13 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+    <script type="text/javascript">
+    jQuery(".tm-input").tagsInput({
+        'height': '1em',
+        'width': '100%'})
+    .each(function(e,idx) {
+        e.importTags(e.value);
+    });
+    </script>
+
 <% end %>
