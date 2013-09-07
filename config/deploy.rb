@@ -8,7 +8,7 @@ set :repository,  "git://oldman/prjs/rails/blog"
 set :deploy_via, :remote_cache
 # set :user, 'deployer'
 # set :scm_passphrase "p@ss"
-set :branch, "ueditor"
+set :branch, "master"
 
 
 #set :gateway,  'somegateway.'
@@ -21,6 +21,12 @@ role :db,  "venus", :primary => true # This is where Rails migrations will run
 #role :db, "oldman"
 #role :web, "oldman"
 #role :app, "oldman"
+
+
+# blog system work with no  precompile , remove precompile
+callback = callbacks[:after].find{|c| c.source == "deploy:assets:precompile" }
+callbacks[:after].delete(callback)
+#after 'deploy:update_code', 'deploy:assets:precompile' unless fetch(:skip_assets, false)
 
 # if you want to clean up old releases on each deploy uncomment this:
 
