@@ -1,0 +1,9 @@
+
+<div class="widget tags">
+  <h3 class="title"> Tags</h3>
+  <ul class="taglist">
+    <% Post.tag_counts.each  do |e| %>
+    <li class="tag"><%=link_to e.name.capitalize, posts_path(:tag=>e.name) %> (<%= e.count %>)</li>
+    <% end %>
+  </ul>
+</div>

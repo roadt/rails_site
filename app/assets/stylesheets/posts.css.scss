@@ -1,11 +1,14 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 .post {
     background-color:white;
     -webkit-box-shadow: 1px 2px 3px #ddd;
     box-shadow: 1px 2px 3px #ddd;
+    padding: 2em 0em 4em;
 
+    margin-bottom: 2em;
     label { 
         display:none;
     }
@@ -16,26 +19,45 @@
         width: 98%;
 
         &[type="text"] {
-                    font-weight: bold;
-                    font-size: 2em;
+            font-weight: bold;
+            font-size: 2em;
         }
     }        
 
 
     .post-content {
-        padding: 20px 20px 15px 77px;
-        margin-bottom: 30px;
+        padding: 20px 30px 15px 50px; 
         
         .head {
             margin-bottom:1em;
-            .title { 
+   
+        }
+
+         .title { 
                 display:inline;
                 font-size: 2em;
                 font-weight: bold;
-            }
+                text-decoration:none;
             a { text-decoration: none ; }
 
+            }
+
+        .tags {
+            border-top: 1px solid #eee;
+            padding-top: 1em;
+            .tag {
+                border: 1px solid #A5D24A;
+                -moz-border-radius: 2px;
+                -webkit-border-radius: 2px;
+                padding: 1px;
+                margin: 0em 2px;
+                text-decoration: none;
+                background: #CDE69C;
+                color: #638421;
+            }
         }
+
+        p { margin-top: 1em; margin-bottom: 1em;}
 
         .body {
         }
@@ -60,4 +82,20 @@
         h3 { }
         blockquote { margin-left: 1em;}
     }
+}
+
+
+.sidebar {
+    .tags {
+        padding: 1em;
+
+        .title { border-bottom: 1px solid #eee ; }
+        ul { 
+            list-style-type: none;
+            margin: 1em 0em;
+            padding-left:1em
+        }
+    }
+
+
 }

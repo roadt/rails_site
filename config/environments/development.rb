@@ -29,9 +29,21 @@ Blog::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   config.active_record.auto_explain_threshold_in_seconds = 0.5
 
+  #-------- asset pipeline ------------
+
+  config.assets.enabled = true
+  
+  # use assets pipe to asist resource or not (def is true)
+  config.assets.compile = true
+
   # Do not compress assets
-  config.assets.compress = false
+  config.assets.compress = true
+
+  # use md5 suffix to utilize or bypass browser cache
+  config.assets.digest = false
 
   # Expands the lines which load the assets
-  config.assets.debug = true
+  config.assets.debug = false
+  
+
 end

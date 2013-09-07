@@ -1,0 +1,9 @@
+<% post = post3 %>
+<div class="post">
+    <span><%= post.name %></span>
+    <span><%= post.title %></span>
+    <span><%= post.content %></span>
+    <span><%= link_to 'Show', post %></span>
+    <span><%= link_to 'Edit', edit_post_path(post) %></span>
+    <span><%= link_to 'Destroy', post, :method=>:delete, data: { confirm: 'Are you sure?' } %></span>
+</div>

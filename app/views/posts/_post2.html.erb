@@ -1,0 +1,21 @@
+
+<% post = post2 %>
+<div class="post">
+
+  <div class="post-content">
+    <h1 class="hidden"><%= post.name %></h1>
+    <div class="head">
+      <h1 class="title"><%= link_to post.title, post %></h1>
+    </div>
+    <p class="tags">
+      <% post.tag_list.each do|e| %>
+      <span class="tag"><%= e %> </span>
+      <% end %>
+    </p>
+
+    <p class="body" >
+      <%= raw post.content %>
+    </p>
+
+  </div>
+</div>

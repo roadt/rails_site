@@ -1,17 +1,6 @@
 
-<div class="post">
 
-  <div class="post-content">
-    <h1 class="hidden"><%= @post.name %></h1>
-    <h1 class="title"><%= link_to @post.title, @post %></h1>
-    <p class="tag">
-      <%= @post.tag_list %>
-    </p>
-    <p class="body" >
-      <%= raw @post.content %>
-    </p>
-  </div>
-</div>
+<%= render :partial=> 'post2', :object=>@post %>
 
 <div class="comments">
   <h2>Comments</h2>

@@ -8,7 +8,11 @@ class PostsController < ApplicationController
 
   def index
 #    puts caller
-    @posts = Post.all
+    if params[:tag]
+      @posts = Post.tagged_with(params[:tag])
+    else
+      @posts = Post.all
+    end
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }

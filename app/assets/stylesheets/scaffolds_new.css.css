@@ -1,10 +1,15 @@
 @import url("http://fonts.googleapis.com/css?family=Lato:400,400italic");
-/*                 Fonts                      */
+/*-----------------------   Fonts       ---------------------------- */
 @font-face {
   font-family: 'FontAwesome';
   font-style: normal;
   font-weight: normal;
   src: url("font/fontawesome-webfont.eot?#iefix") format("embedded-opentype"), url("font/fontawesome-webfont.woff") format("woff"), url("font/fontawesome-webfont.ttf") format("truetype"), url("font/fontawesome-webfont.svg#FontAwesomeRegular") format("svg");
+}
+
+/* -------------------------- reset -------------------------------*/
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0em;
 }
 
 body {
@@ -102,6 +107,9 @@ body {
   width: 270px;
   line-height: 1.8em;
   float: right;
+}
+
+.widget {
   background-color: white;
   margin-bottom: 50px;
 }
@@ -133,8 +141,13 @@ body {
   }
 
   .sidebar {
+    min-width: 320px;
     float: none;
     width: 100%;
+  }
+  .sidebar li {
+    display: inline;
+    padding: 0em 1em;
   }
 }
 /* make image, embed resize correspoding to container */

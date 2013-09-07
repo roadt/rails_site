@@ -15,14 +15,7 @@
 //= require jquery.ui.all
 //= require jquery.tagsinput
 //= require twitter/bootstrap
-//= require_tree .
-//=require wmd/wmd
-//=require wmd/showdown
+//require_tree .
+//=require ueditor/ueditor.all
+//=require ueditor_config
 
-
-
-$(function() {
-      new WMDEditor({
-                           helpLink: "http://daringfireball.net/projects/markdown/syntax"
-                    });
-})

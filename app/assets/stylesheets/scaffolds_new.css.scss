@@ -1,5 +1,7 @@
 
-/*                 Fonts                      */
+/*-----------------------   Fonts       ---------------------------- */
+
+
 @import url("http://fonts.googleapis.com/css?family=Lato:400,400italic");
 @font-face {
     font-family: 'FontAwesome';
@@ -7,6 +9,14 @@
     font-weight: normal;
     src: url("font/fontawesome-webfont.eot?#iefix") format('embedded-opentype'), url("font/fontawesome-webfont.woff") format('woff'), url("font/fontawesome-webfont.ttf") format('truetype'), url("font/fontawesome-webfont.svg#FontAwesomeRegular") format('svg');
 }
+
+
+/* -------------------------- reset -------------------------------*/
+h1,h2,h3,h4,h5,h6,p {
+    margin:0em;
+}
+
+
 
 body {
     background: #eee;
@@ -29,8 +39,8 @@ body {
 
 #user_nav {
     float: right; 
-
 }
+
 .header {
     background-color: #eee;
     height: 100px;
@@ -103,8 +113,12 @@ body {
     width: 270px;
     line-height: 1.8em;
     float: right;
+}
+
+.widget {
     background-color:white;
     margin-bottom: 50px;
+
 }
 
 @media screen and (max-width: 1260px) {
@@ -134,8 +148,14 @@ body {
         margin-right: 0;
     }
     .sidebar {
+        min-width: 320px;
         float: none;
         width: 100%;
+
+        li {
+            display:inline;
+            padding: 0em 1em;
+        }
     }
 
 }
