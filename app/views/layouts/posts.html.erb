@@ -1,0 +1,18 @@
+<% content_for :sidebar do%>
+      <div class="sidebar">
+        <%= render 'posts/tags' %>
+        <%= render 'posts/tags' %>
+      </div>
+<% end %>
+
+<% content_for :main do %>
+      <div  class="main-col pull-left">
+        <div class="wrapper">
+          <%=render :template=>'layouts/flash' %>
+          <%= yield %>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+<% end %>
+
+<%= render :template=>"layouts/application" %>

@@ -13,4 +13,5 @@
 *= require  scaffolds_new
 *= require jquery.tagsinput
 *require bootstrap_and_overrides
+*=require devise
  */
