@@ -13,14 +13,14 @@ Blog::Application.routes.draw do
     resource :attachments
   end
 
-#  mount Mercury::Engine => '/'
-
   resources :shows do 
     member do
 #      get 'run'
     end
   end
 
+#  mount Mercury::Engine => '/'
+  mount Ueditor::Engine => '/ueditor'
 
   get "test/index"
   get "test/env"
