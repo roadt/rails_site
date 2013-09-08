@@ -40,6 +40,7 @@ GEM
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
     builder (3.0.4)
+    cancan (1.6.10)
     capistrano (2.14.2)
       highline
       net-scp (>= 1.0.0)
@@ -226,6 +227,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on (= 2.4.1)
+  cancan (~> 1.6.10)
   capistrano (= 2.14.2)
   coffee-rails (~> 3.2.1)
   data_mapper (= 1.2.0)

@@ -65,3 +65,4 @@ gem 'tagsinput-rails', '1.3.3.1'
 
 # login
 gem 'devise', '~>3.0.0'
+gem 'cancan', '~>1.6.10'
