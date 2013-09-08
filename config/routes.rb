@@ -1,4 +1,6 @@
 Blog::Application.routes.draw do
+  devise_for :users
+
     namespace :mercury do
       resources :images#, :only=> [:create, :destroy]
     end
