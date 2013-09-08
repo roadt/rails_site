@@ -12,6 +12,7 @@ h1, h2, h3, h4, h5, h6, p {
   margin: 0em;
 }
 
+/* ----------------------- layout  (with responsive design) --------------- */
 body {
   background: #eee;
   color: #444;
@@ -30,24 +31,29 @@ body {
     font-size: 13px;
   }
 }
-#user_nav {
-  float: right;
+a {
+  text-decoration: none;
 }
 
 .header {
   background-color: #eee;
-  height: 100px;
-  color: gray;
-}
-.header h1 {
-  float: left;
+  min-height: 100px;
+  min-width: 320px;
+  /* header title */
+  /* header sub bar */
+  /* header's link  ( can be both in title or subbar) */
 }
 .header p {
   float: right;
+  margin: 1em 0em 0em 0em;
 }
 .header a {
   color: #808080;
-  text-decoration: none;
+  margin-right: 0.7em;
+  font-size: 1.2em;
+}
+.header a:hover {
+  border-bottom: 2px green solid;
 }
 
 #header {
