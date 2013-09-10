@@ -30,11 +30,14 @@ callbacks[:after].delete(callback)
 
 # if you want to clean up old releases on each deploy uncomment this:
 
+after  'deploy:update_code', 'deploy:bundle_gems'
+
+
+before 'deploy:migrate', 'deploy:dbcreate'
+
 after "deploy:restart", "deploy:cleanup"
 after "deploy:upload",  "deploy:restart"
 
-before 'deploy:migrate', 'deploy:dbcreate'
-after  'deploy:update_code', 'deploy:bundle_gems'
 
 
 
@@ -78,5 +81,17 @@ namespace :deploy do
         run "cd #{release_path} && #{rake} db:create"
   end
 
+  task :migrate2, :roles =>:db do 
+    run "cd #{current_path} && #{rake} RAILS_ENV=production db:migrate"
+  end
+  
+  task :update2 do 
+    transaction do 
+      update_code
+      create_symlink
+    end
+    migrate2
+    restart
+  end
 end
 
