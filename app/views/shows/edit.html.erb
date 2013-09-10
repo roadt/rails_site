@@ -2,5 +2,9 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @show %> |
-<%= link_to 'Back', shows_path %>
+<% links = []
+links << link_to('Show', @show)  if can?(:read, @show)
+links << link_to('Back', shows_path)
+%>
+<%= raw links.join(' | ') %>
+

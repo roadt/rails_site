@@ -1,9 +1,13 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-#  unless Rails.application.config.consider_all_requests_local
+  unless Rails.application.config.consider_all_requests_local
     rescue_from Exception, with: lambda { |e| render_error 500, e}
-#  end
+  end
+
+  rescue_from CanCan::AccessDenied do |error|
+    redirect_to root_url, :alert => error.message
+  end
 
   private
     def render_error(status, err)

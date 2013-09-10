@@ -9,6 +9,10 @@
   <b>Description:</b>
   <%= raw @show.description %>
 </p>
-<%= link_to 'Edit', edit_show_path(@show) %> |
-<%= link_to 'Back', shows_path %>
+
+<% links = []
+links << link_to('Edit', edit_show_path(@show))  if can?(:edit, @show)
+links << link_to( 'Back', shows_path)
+%>
+<%= raw links.join(' | ') %>
 </div>

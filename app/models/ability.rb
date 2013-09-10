@@ -1,3 +1,11 @@
+#
+#
+# blog user has  following rolse
+#  guest (only view, commenter, writer, editor, admin)
+#  
+#
+#
+
 class Ability
   include CanCan::Ability
 
@@ -28,5 +36,41 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/ryanb/cancan/wiki/Defining-Abilities
+
+    user ||= User.new 
+    
+    default if user.default?
+    User::ROLES.each do |name|
+      send(name) if user.send("#{name}?")
+    end
+  end
+
+  #
+  # for now guest can view all things (this maybe change)
+  #
+  def default
+    can :read, :all
+  end
+
+  #
+  # can view all things
+  #
+  def commenter
+    can [:create, :update, :destroy], Comment
+  end
+
+  def editor
+    commenter
+    can :manage, Post
+  end
+
+  # admin 
+  def admin
+    can :manage, :all
+  end
+  
+  # site owner
+  def owner
+    admin
   end
 end

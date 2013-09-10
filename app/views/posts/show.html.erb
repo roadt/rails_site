@@ -7,15 +7,23 @@
   
   <%= render @post.comments %>
 
-
+  <% if can? :create, Comment %>
   <div class="add">
     <h2>Add a comment:</h2>
     <%= render "comments/form" %>
   </div>
+  <% else %>
+  <h2 class="center">
+  <%= link_to 'Login to comment', new_user_session_path %>
+  </h2>
+  <% end %>
 </div>
 
 <br />
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<% links = []
+links << link_to('Edit', edit_post_path(@post)) if can?(:edit, @post)
+links << link_to('Back', posts_path)
+%>
+<%= raw links.join(' | ') %>
 

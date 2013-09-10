@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
-
+  authorize_resource
 #  http_basic_authenticate_with :name =>"test", :password => "pass", :except => [:index, :show]
 
   # GET /posts
   # GET /posts.json
-  http_basic_authenticate_with :name => "test", :password => "p123", :except=>[:index, :show]
+#  http_basic_authenticate_with :name => "test", :password => "p123", :except=>[:index, :show]
 
   def index
 #    puts caller
