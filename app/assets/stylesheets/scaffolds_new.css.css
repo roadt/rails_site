@@ -69,7 +69,8 @@ a {
 }
 
 .center {
-  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .alignleft {
@@ -96,6 +97,8 @@ a {
 
 .flash {
   background-color: white;
+  margin-bottom: 30px;
+  padding: 1em 2em;
 }
 
 /* responsive  two column layout */

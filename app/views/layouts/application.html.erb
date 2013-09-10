@@ -9,6 +9,14 @@
   </head>
   <body>
     <div id="header" class="header inner">
+      <span class="loginbox">
+        <% if user_signed_in? %>
+        <%= current_user.email%><%= link_to 'Logout', destroy_user_session_path, :method=>:delete %>
+        <% else %>
+        <%= link_to 'Login', new_user_session_path %>
+        <% end %>
+      </span>
+
       <h1>Road Tang's Site</h1>
       <p class="nav">
         <%= link_to "Home",  root_path %> 
@@ -19,30 +27,13 @@
 
     <div id="content" class="inner">
 
-      <div class="sidebar">
-        <%= render 'posts/tags' %>
-      <%= render 'posts/tags' %>
-  
-      </div>
+      <%= yield (:sidebar) %>
 
-      <div  class="main-col pull-left">
-        <div class="wrapper">
-          <div class="flash">
-          <% flash.each do |name, msg| %>
-          <%= content_tag :div, msg, :id=>"flash_#{name}" %>
-          <% end %>
-          <!--     
-                   <%# content_tag :h1, yield(:title) if show_title? %>
-                   -->
-          </div>
-          <%= yield %>
-        </div>
-      </div>
-      <div class="clearfix"></div>
+      <%= yield (:main) %>
+
     </div>
 
-</div>
-<div class="footer">
-</div>
-</body>
+    <div class="footer">
+    </div>
+  </body>
 </html>

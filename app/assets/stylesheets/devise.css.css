@@ -1,0 +1,11 @@
+.loginbox {
+  float: right;
+}
+
+.devise {
+  width: 250px;
+  background: #FFF;
+  margin-top: 7em;
+  padding: 2em;
+  line-height: 2em;
+}
