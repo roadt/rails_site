@@ -8,8 +8,8 @@
 
 class Ability
   include CanCan::Ability
-
-  def initialize(user)
+  attr_accessor :user
+  def initialize(u)
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)
@@ -37,7 +37,7 @@ class Ability
     # See the wiki for details:
     # https://github.com/ryanb/cancan/wiki/Defining-Abilities
 
-    user ||= User.new 
+    @user = u || User.new 
     
     default if user.default?
     User::ROLES.each do |name|
@@ -56,7 +56,10 @@ class Ability
   # can view all things
   #
   def commenter
-    can [:create, :update, :destroy], Comment
+    default
+    can [:create], Comment
+    can [:update, :destroy], Comment, :owner => {:id => user.id}
+    can [:update, :destroy], Comment,  :post => { :owner_id => user.id }
   end
 
   def editor

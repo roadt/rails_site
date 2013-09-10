@@ -1,8 +1,8 @@
 class AddRolesToUsers < ActiveRecord::Migration
   def change
     add_column :users, :roles, :integer, :default => 0
-    User.all.each {|u| u.grant_commenter}
-    User.find(1).grant_owner
+    User.all.each {|u| u.grant_commenter.save!}
+    User.find(1).grant_owner.save!
   end
 
   def down

@@ -1,5 +1,5 @@
 Blog::Application.routes.draw do
-  devise_for :users
+  devise_for :users , :controllers => {:registrations => "registrations"}
 
     namespace :mercury do
       resources :images#, :only=> [:create, :destroy]
