@@ -1,6 +1,12 @@
 Blog::Application.routes.draw do
-  devise_for :users , :controllers => {:registrations => "registrations"}
+  # deivse
+  devise_for :users , :controllers => {:registrations => "registrations", 
+   }
 
+  # omniatuh
+  devise_scope :user do
+    match "/auth/:provider/callback"  =>  "sessions#create_from_auth"
+  end
     namespace :mercury do
       resources :images#, :only=> [:create, :destroy]
     end

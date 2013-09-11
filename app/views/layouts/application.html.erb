@@ -11,9 +11,10 @@
     <div id="header" class="header inner">
       <span class="loginbox">
         <% if user_signed_in? %>
-        <%= current_user.email%><%= link_to 'Logout', destroy_user_session_path, :method=>:delete %>
+        (<%= current_user.email%>) <%= link_to 'Logout', destroy_user_session_path, :method=>:delete %>
         <% else %>
-        <%= link_to 'Login', new_user_session_path %>
+        <%= link_to 'Login', new_user_session_path %>(<%= link_to 'Github', '/auth/github' %>|
+        <%= link_to 'Google', '/auth/google_oauth2' %>)
         <% end %>
       </span>
 
@@ -26,11 +27,8 @@
 
 
     <div id="content" class="inner">
-
       <%= yield (:sidebar) %>
-
       <%= yield (:main) %>
-
     </div>
 
     <div class="footer">
