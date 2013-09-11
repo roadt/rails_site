@@ -66,3 +66,5 @@ gem 'tagsinput-rails', '1.3.3.1'
 # login
 gem 'devise', '~>3.0.0'
 gem 'cancan', '~>1.6.10'
+gem 'omniauth', '~>1.0'
+gem 'omniauth-github', '~>1.0'
