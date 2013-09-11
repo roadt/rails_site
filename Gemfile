@@ -63,5 +63,11 @@ gem 'acts-as-taggable-on', '2.4.1'
 gem 'tagsinput-rails', '1.3.3.1'
 
 
-# login
+## login
 gem 'devise', '~>3.0.0'
+gem 'cancan', '~>1.6.10'
+gem 'omniauth', '~>1.0'
+gem 'omniauth-github', '~>1.0'
+gem 'omniauth-twitter', '~>1.0'
+gem 'omniauth-facebook', '~>1.4'
+gem 'omniauth-google-oauth2', '~>0.2'

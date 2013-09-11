@@ -22,4 +22,4 @@
 
 <br />
 
-<%= link_to 'New Show', new_show_path %>
+<%= link_to 'New Show', new_show_path if can? :create, Show %>

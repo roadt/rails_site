@@ -11,14 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130908071802) do
+ActiveRecord::Schema.define(:version => 20130910165136) do
 
   create_table "comments", :force => true do |t|
-    t.string   "commenter"
     t.text     "body"
     t.integer  "post_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "owner_id"
   end
 
   add_index "comments", ["post_id"], :name => "index_comments_on_post_id"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(:version => 20130908071802) do
     t.text     "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "owner_id"
   end
 
   create_table "show_data", :force => true do |t|
@@ -99,6 +100,7 @@ ActiveRecord::Schema.define(:version => 20130908071802) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.integer  "roles",                  :default => 0
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

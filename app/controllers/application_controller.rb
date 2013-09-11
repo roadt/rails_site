@@ -4,6 +4,9 @@ class ApplicationController < ActionController::Base
   unless Rails.application.config.consider_all_requests_local
     rescue_from Exception, with: lambda { |e| render_error 500, e}
   end
+  rescue_from CanCan::AccessDenied do |error|
+    redirect_to root_url, :alert => error.message
+  end
 
   private
     def render_error(status, err)
