@@ -22,8 +22,9 @@
 <br />
 
 <% links = []
-links << link_to('Edit', edit_post_path(@post)) if can?(:edit, @post)
 links << link_to('Back', posts_path)
+links << link_to('Edit', edit_post_path(@post)) if can?(:edit, @post)
+links << link_to('Delete', post_path(@post), :method=>:delete, data: { confirm: "sure?"}) if can?(:edit, @post)
 %>
 <%= raw links.join(' | ') %>
 
