@@ -36,7 +36,7 @@ after  'deploy:update_code', 'deploy:bundle_gems'
 before 'deploy:migrate', 'deploy:dbcreate'
 
 after "deploy:restart", "deploy:cleanup"
-after "deploy:upload",  "deploy:restart"
+after "deploy:upload",  "deploy:restart2"
 
 
 
@@ -85,13 +85,22 @@ namespace :deploy do
     run "cd #{current_path} && #{rake} RAILS_ENV=production db:migrate"
   end
   
-  task :update2 do 
+  task :updateapp2 do 
     transaction do 
       update_code
       create_symlink
     end
     migrate2
     restart
+  end
+  
+  task :update2 do 
+    updateapp2
+    restart
+  end
+
+  task :restart2 do
+      run "cd #{current_path}  &&  bundle exec ./p.sh  -C config/thin.yml restart"
   end
 end
 
