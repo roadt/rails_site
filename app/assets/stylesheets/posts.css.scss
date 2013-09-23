@@ -2,13 +2,27 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.post {
-    background-color:white;
+
+.section {
+    background-color: white;
     -webkit-box-shadow: 1px 2px 3px #ddd;
     box-shadow: 1px 2px 3px #ddd;
-    padding: 2em 0em 4em;
 
+
+    padding: 20px;
     margin-bottom: 2em;
+
+    .title {
+        border-bottom: 1px solid #eee;
+    }
+}
+
+
+
+
+.post {
+    padding-bottom: 4em;
+
     label { 
         display:none;
     }
@@ -26,21 +40,22 @@
 
 
     .post-content {
-        padding: 20px 30px 15px 50px; 
+        //        padding: 20px 30px 15px 50px; 
+        padding: 1em 1.5em 1em 2em;
         
         .head {
             margin-bottom:1em;
-   
+            border-bottom: 1px solid #eee;  
         }
 
-         .title { 
-                display:inline;
-                font-size: 2em;
-                font-weight: bold;
-                text-decoration:none;
+        .title { 
+            display:inline;
+            font-size: 2em;
+            font-weight: bold;
+            text-decoration:none;
             a { text-decoration: none ; }
 
-            }
+        }
 
         .tags {
             border-top: 1px solid #eee;
@@ -69,30 +84,41 @@
     }
 }
 
-.comments {
-    padding: 20px;
-    background-color: white;
+.main-col {
+    
+    .comments {
+        .add {
+            margin: 1em 0em;
 
-    h2 {    
-        border-bottom: 1px solid #eee;
-        margin-bottom: 0.5em;    
-    }
+            textarea {
+                min-width: 300px;
+                width: 60%;
+                height: 8em;
+            }
+        }
+        
+        .title {    
+            border-bottom: 1px solid #eee;
+            margin-bottom: 0.5em;    
+        }
 
-    .comment {
-        margin: 0.5em;
-        border-bottom: 1px #eee solid;
+        .comment {
+            margin: 0.5em;
+            border-bottom: 1px #eee solid;
 
-        h3 { }
-        blockquote { margin-left: 1em;}
+            h3 { }
+            blockquote { margin-left: 1em;}
+        }
     }
 }
 
-
+//----
 .sidebar {
-    .tags {
-        padding: 1em;
+
+    .widget { 
 
         .title { border-bottom: 1px solid #eee ; }
+
         ul { 
             list-style-type: none;
             margin: 1em 0em;
@@ -100,5 +126,30 @@
         }
     }
 
+    .tags {
+        
+    }
+
+    .recent-comments {
+        .comments {
+        }
+    }
+}
+
+
+@media screen and (max-width: 900px) {
+
+    .sidebar {
+        .tags {
+            li {
+                display: inline;
+                padding: 0em 1em;
+            }
+        }
+
+        .comments {
+
+        }
+    }
 
 }

@@ -1,0 +1,9 @@
+
+<div class="widget recent-comments">
+  <h3 class="title"> Recent Comments</h3>
+  <ul class="comments">
+    <% Comment.order("created_at desc").limit(5).each  do |e| %>
+    <li class="comment"><%=link_to e.owner.email[0..4]%> says: <%=link_to e.body, post_path(e.post) %></li>
+    <% end %>
+  </ul>
+</div>

@@ -1,9 +1,16 @@
-.post {
+.section {
   background-color: white;
   -webkit-box-shadow: 1px 2px 3px #ddd;
   box-shadow: 1px 2px 3px #ddd;
-  padding: 2em 0em 4em;
+  padding: 20px;
   margin-bottom: 2em;
+}
+.section .title {
+  border-bottom: 1px solid #eee;
+}
+
+.post {
+  padding-bottom: 4em;
 }
 .post label {
   display: none;
@@ -18,10 +25,11 @@
   font-size: 2em;
 }
 .post .post-content {
-  padding: 20px 30px 15px 50px;
+  padding: 1em 1.5em 1em 2em;
 }
 .post .post-content .head {
   margin-bottom: 1em;
+  border-bottom: 1px solid #eee;
 }
 .post .post-content .title {
   display: inline;
@@ -49,32 +57,41 @@
 .post .post-content p {
   margin-top: 1em;
   margin-bottom: 1em;
+  line-height: 2em;
 }
 
-.comments {
-  padding: 20px;
-  background-color: white;
+.main-col .comments .add {
+  margin: 1em 0em;
 }
-.comments h2 {
+.main-col .comments .add textarea {
+  min-width: 300px;
+  width: 60%;
+  height: 8em;
+}
+.main-col .comments .title {
   border-bottom: 1px solid #eee;
   margin-bottom: 0.5em;
 }
-.comments .comment {
+.main-col .comments .comment {
   margin: 0.5em;
   border-bottom: 1px #eee solid;
 }
-.comments .comment blockquote {
+.main-col .comments .comment blockquote {
   margin-left: 1em;
 }
 
-.sidebar .tags {
-  padding: 1em;
-}
-.sidebar .tags .title {
+.sidebar .widget .title {
   border-bottom: 1px solid #eeeeee;
 }
-.sidebar .tags ul {
+.sidebar .widget ul {
   list-style-type: none;
   margin: 1em 0em;
   padding-left: 1em;
+}
+
+@media screen and (max-width: 900px) {
+  .sidebar .tags li {
+    display: inline;
+    padding: 0em 1em;
+  }
 }

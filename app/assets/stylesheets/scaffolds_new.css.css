@@ -43,9 +43,9 @@ a {
   /* header sub bar */
   /* header's link  ( can be both in title or subbar) */
 }
-.header p {
+.header .nav {
   float: right;
-  margin: 1em 0em 0em 0em;
+  margin: 0em 0em 1em 0em;
 }
 .header a {
   color: #808080;
@@ -54,6 +54,9 @@ a {
 }
 .header a:hover {
   border-bottom: 2px green solid;
+}
+.header a.selected {
+  border-bottom: 2px black solid;
 }
 
 #header {
@@ -121,6 +124,7 @@ a {
 .widget {
   background-color: white;
   margin-bottom: 50px;
+  padding: 1em;
 }
 
 @media screen and (max-width: 1260px) {
@@ -153,10 +157,6 @@ a {
     min-width: 320px;
     float: none;
     width: 100%;
-  }
-  .sidebar li {
-    display: inline;
-    padding: 0em 1em;
   }
 }
 /* make image, embed resize correspoding to container */

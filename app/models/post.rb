@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
   
-  attr_accessible :content, :name, :title, :tag_list
+  attr_accessible :content, :name, :title, :tag_list, :comments_count
 #  validates :name, :presence => true
   validates :title, :presence => true, :length => { :minimum => 5 }
 

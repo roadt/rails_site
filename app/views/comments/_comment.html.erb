@@ -1,8 +1,8 @@
 
 <div class="comment">
 
-  <h3><%= comment.commenter %>:</h3>
-    <blockquote>
+  <h3 class="owner"><%= comment.commenter %>:</h3>
+    <blockquote class="body">
       <%= comment.body %>
     </blockquote>
     <%= link_to 'Destroy Comment', [comment.post,  comment], :confirm=> 'Are you sure?', :method =>:delete if can? :destroy, comment%>

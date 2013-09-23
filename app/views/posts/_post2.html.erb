@@ -1,21 +1,22 @@
 
 <% post = post2 %>
-<div class="post">
+<div class="section post">
 
   <div class="post-content">
     <h2 class="hidden"><%= post.name %></h2>
     <div class="head">
       <h2 class="title"><%= link_to post.title, post %></h2>
     </div>
+
+
+    <div class="body" >
+      <%= raw post.content %>
+    </div>
+
     <p class="tags">
       <% post.tag_list.each do|e| %>
-      <span class="tag"><%= e %> </span>
+       <%=link_to e, posts_path(:tag=>e), :class=>"tag" %> 
       <% end %>
     </p>
-
-    <p class="body" >
-      <%= raw post.content %>
-    </p>
-
   </div>
 </div>

@@ -2,10 +2,11 @@
 
 <%= render :partial=> 'post2', :object=>@post %>
 
-<div class="comments">
-  <h2>Comments</h2>
+<div class="section comments">
+  <h2 class="title">Comments</h2>
   
   <%= render @post.comments %>
+
 
   <% if can? :create, Comment %>
   <div class="add">
@@ -14,9 +15,10 @@
   </div>
   <% else %>
   <h2 class="center">
-  <%= link_to 'Login to comment', new_user_session_path %>
+    <%= link_to 'Login to comment', new_user_session_path %>
   </h2>
   <% end %>
+
 </div>
 
 <br />

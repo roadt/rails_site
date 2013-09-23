@@ -1,7 +1,7 @@
 <%= form_for ([@post, @post.comments.build]) do |f| %>
 <div class="field">
-  <%= f.label :body %><br />
-  <%= f.text_field :body %>
+  <% f.label :body %>
+  <%= f.text_area :body %>
 </div>
 <div class="actions">
   <%= f.submit %>

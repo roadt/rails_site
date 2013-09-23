@@ -137,7 +137,7 @@ a {
 .widget {
     background-color:white;
     margin-bottom: 50px;
-
+    padding: 1em;
 }
 
 @media screen and (max-width: 1260px) {
@@ -170,11 +170,6 @@ a {
         min-width: 320px;
         float: none;
         width: 100%;
-
-        li {
-            display:inline;
-            padding: 0em 1em;
-        }
     }
 
 }

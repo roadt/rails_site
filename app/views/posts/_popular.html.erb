@@ -1,0 +1,9 @@
+
+<div class="widget popular-posts">
+  <h3 class="title">Popular Posts</h3>
+  <ul class="posts">
+    <% Post.order("comments_count desc").limit(10).each  do |e| %>
+    <li class="post-title"><%=link_to e.title, post_path(e) %> (<%= e.comments_count %>)</li>
+    <% end %>
+  </ul>
+</div>
