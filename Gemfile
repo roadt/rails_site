@@ -71,3 +71,17 @@ gem 'omniauth-github', '~>1.0'
 gem 'omniauth-twitter', '~>1.0'
 gem 'omniauth-facebook', '~>1.4'
 gem 'omniauth-google-oauth2', '~>0.2'
+
+
+
+group :development, :test do
+  gem 'rspec-rails', '~> 2.0'
+  gem 'ruby-debug',   :platform => :mri_18
+  gem 'debugger',   :platform => :mri_19
+end
+
+
+# navbar
+gem 'simple-navigation', '~>3.11.0'
+
+

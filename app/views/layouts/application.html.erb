@@ -19,10 +19,7 @@
       </span>
 
       <a href="/"><h1>Road Tang's Site</h1></a>
-      <p class="nav">
-        <%= link_to "Home",  root_path %> 
-        <%= link_to "GitHub", "https://github.com/roadt"%>
-      </p>
+      <%= render_navigation :renderer=>:links %>
     </div>
 
 

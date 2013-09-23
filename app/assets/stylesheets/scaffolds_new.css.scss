@@ -52,9 +52,9 @@ a {
     /* header title */
     h1 { }
     /* header sub bar */
-    p { 
+    .nav { 
         float: right; 
-        margin: 1em 0em 0em 0em;
+        margin: 0em 0em 1em 0em;
     }
 
     /* header's link  ( can be both in title or subbar) */
@@ -67,7 +67,10 @@ a {
         &:hover {
             border-bottom: 2px green solid;
         }
-            
+
+        &.selected { 
+            border-bottom: 2px black solid;
+        }
     }
 }
 
