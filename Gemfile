@@ -84,4 +84,4 @@ end
 # navbar
 gem 'simple-navigation', '~>3.11.0'
 
-
+gem 'factory_girl_rails', '~> 4.2.1'
