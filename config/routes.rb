@@ -1,5 +1,7 @@
 Blog::Application.routes.draw do
-  use_doorkeeper
+  use_doorkeeper do
+    controllers :applications => 'oauth/applications'
+  end
 
   # deivse
   devise_for :users , :controllers => {:registrations => "registrations", 

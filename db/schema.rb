@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131015064536) do
+ActiveRecord::Schema.define(:version => 20131015072057) do
 
   create_table "comments", :force => true do |t|
     t.text     "body"
@@ -67,8 +67,11 @@ ActiveRecord::Schema.define(:version => 20131015064536) do
     t.string   "redirect_uri", :limit => 2048, :null => false
     t.datetime "created_at",                   :null => false
     t.datetime "updated_at",                   :null => false
+    t.integer  "owner_id"
+    t.string   "owner_type"
   end
 
+  add_index "oauth_applications", ["owner_id", "owner_type"], :name => "index_oauth_applications_on_owner_id_and_owner_type"
   add_index "oauth_applications", ["uid"], :name => "index_oauth_applications_on_uid", :unique => true
 
   create_table "posts", :force => true do |t|

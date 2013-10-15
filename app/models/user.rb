@@ -3,6 +3,9 @@ class User < ActiveRecord::Base
   has_many :comments, :foreign_key => :owner_id, :dependent=>:destroy
   has_many :posts, :foreign_key => :owner_id, :dependent=>:destroy
 
+  #------------- Door keeper --------------------------
+  has_many :oauth_applications, class_name: 'Doorkeeper::Application', as: :owner
+
   #-------------- Devise ---------------------------------
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
@@ -11,7 +14,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   # attr_accessible :title, :body
    attr_accessible :email, :password, :password_confirmation, :remember_me,:roles
-
 
 
   #-----------------  Role Based ACL --------------------------------
