@@ -72,7 +72,7 @@ SimpleNavigation::Configuration.run do |navigation|
     # primary.auto_highlight = false
 
     primary.item :home, 'Home', '/'
-    primary.item :post, 'Post', posts_path
+    primary.item :post, 'Post', posts_path, :highlights_on => %r_^/posts(/\d+)?_
     primary.item :github, 'GitHub', 'http://github.com/roadt'
   end
 
