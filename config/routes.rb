@@ -1,4 +1,6 @@
 Blog::Application.routes.draw do
+  use_doorkeeper
+
   # deivse
   devise_for :users , :controllers => {:registrations => "registrations", 
    }
