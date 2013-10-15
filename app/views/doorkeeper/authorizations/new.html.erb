@@ -1,8 +1,8 @@
-<div class="span16">
+<div class="span12">
   <h2>Authorize <%= @pre_auth.client.name %> to use your account?</h2>
 </div>
 
-<div class="span16">
+<div class="span12">
   <% if @pre_auth.scopes %>
   <p>
     This application will be able to:
@@ -21,7 +21,7 @@
       <%= hidden_field_tag :state, @pre_auth.state %>
       <%= hidden_field_tag :response_type, @pre_auth.response_type %>
       <%= hidden_field_tag :scope, @pre_auth.scope %>
-      <%= submit_tag "Authorize", :class => "btn success" %> or
+      <%= submit_tag "Authorize", :class => "btn btn-success" %> or
     <% end %>
   </div>
   <div class="inline_block">
