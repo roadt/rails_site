@@ -25,6 +25,8 @@ Blog::Application.routes.draw do
     resource :attachments
   end
 
+  resource :profile 
+
   resources :shows do 
     member do
 #      get 'run'
