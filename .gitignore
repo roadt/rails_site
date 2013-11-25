@@ -22,3 +22,5 @@
 # ignore sass cache
 .sass-cache
 
+# ignore secrets
+/config/secrets.yml

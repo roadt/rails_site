@@ -9,6 +9,10 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
+
+## Get Secrets Configuration (i.e. not store in git repo.)
+::SECRETS = YAML.load_file(File.expand_path("config/secrets.yml", Rails.root)).fetch(Rails.env)
+
 module Blog
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -33,7 +37,7 @@ module Blog
     # config.time_zone = 'Central Time (US & Canada)'
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
-    # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
+    # config.i18n.load_path `+= Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
     # Configure the default encoding used in templates for Ruby 1.9.
