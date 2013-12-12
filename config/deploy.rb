@@ -99,8 +99,12 @@ namespace :deploy do
     restart
   end
 
+  task :bundle do
+    run "cd #{current_path} && bundle install"
+  end
+
   task :restart2 do
-      run "cd #{current_path}  &&  bundle exec ./p.sh  -C config/thin.yml restart"
+      run "cd #{current_path}  &&  bundle exec thin  -C config/thin.yml restart"
   end
 end
 
