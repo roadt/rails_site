@@ -31,7 +31,7 @@ gem 'mysql2'
 gem 'mercury-rails', '~>0.9'
 gem 'wmd-rails', '~> 0.0.7'
 #gem 'ueditor-rails', :path => '/home/srv/git/github/roadt/ueditor-rails'
-gem 'ueditor-rails', :git => 'git://oldman/github/roadt/ueditor-rails'
+gem 'ueditor-rails', :git => 'https://github.com/roadt/ueditor-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -1,8 +1,9 @@
 GIT
-  remote: git://oldman/github/roadt/ueditor-rails
-  revision: 53fdcba13a1673335f702f3b23770c177037b6d1
+  remote: https://github.com/roadt/ueditor-rails
+  revision: 0bbae22356e2d486878371e23d6982c0518c5893
   specs:
-    ueditor-rails (0.0.0)
+    ueditor-rails (0.0.1)
+      paperclip (~> 3.4.1)
 
 GEM
   remote: http://venus/mirrors/ruby/
@@ -332,3 +333,6 @@ DEPENDENCIES
   uglifier (>= 1.0.3)
   unicorn (= 4.6.2)
   wmd-rails (~> 0.0.7)
+
+BUNDLED WITH
+   1.10.6
