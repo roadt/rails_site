@@ -1,10 +1,15 @@
-set :application, "blog"
+# multistage
+set :stages, %w(development staging production)
+set :default_stage, 'staging'
+require 'capistrano/ext/multistage'
 
+# app info
+set :application, "blog"
 
 # Source control system.
  set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
-set :repository,  "roadt@venus:/repos/github/roadt/rails_blog"
+set :repository,  "roadt@venus:/repos/github/roadt/rails_blog/.git"
 set :deploy_via, :remote_cache
 # set :user, 'deployer'
 # set :scm_passphrase "p@ss"
@@ -23,6 +28,7 @@ role :db,  "venus", :primary => true # This is where Rails migrations will run
 #role :app, "oldman"
 
 
+# events/hooks
 # blog system work with no  precompile , remove precompile
 callback = callbacks[:after].find{|c| c.source == "deploy:assets:precompile" }
 callbacks[:after].delete(callback)
@@ -31,10 +37,7 @@ callbacks[:after].delete(callback)
 # if you want to clean up old releases on each deploy uncomment this:
 
 after  'deploy:update_code', 'deploy:bundle_gems'
-
-
 before 'deploy:migrate', 'deploy:dbcreate'
-
 after "deploy:restart", "deploy:cleanup"
 after "deploy:upload",  "deploy:restart2"
 
@@ -62,7 +65,7 @@ namespace :deploy do
    end
 
   task :start do ;
-    run "cd #{current_path}  &&  bundle exec thin  -C config/thin.yml start"
+    run "cd #{current_path}  &&  bundle exec thin  -C config/thin.yml  -e #{fetch(:rails_env)} start"
   end
   
   task :stop do 

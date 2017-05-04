@@ -22,7 +22,7 @@ test:
   password: pass
   host: venus
 
-production:
+staging:
   adapter: mysql2
   encoding: utf8
   reconnect: false
@@ -31,3 +31,13 @@ production:
   username: roadt
   password: pass
   host: venus
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: ror
+  pool: 5
+  username: roadt
+  password: pass
+  host: localhost
