@@ -44,6 +44,7 @@ gem 'unicorn', '4.6.2'
 
 # Deploy with Capistrano
 gem 'capistrano', '2.14.2'
+gem 'rvm-capistrano', :require=>false
 gem 'thin', '1.5.1'
 
 # To use debugger

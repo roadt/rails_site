@@ -16,6 +16,15 @@ set :deploy_via, :remote_cache
 set :branch, "master"
 
 
+## rvm-capistrano
+require 'rvm/capistrano'
+set :rvm_ruby_string, '2.3.1'
+set :rvm_type, :system
+#before 'deploy:setup', 'rvm:install_rvm'
+#before 'deploy:setup', 'rvm:install_ruby'
+#before 'deploy:setup', 'rvm:create_gemset'
+
+
 #set :gateway,  'somegateway.'
 set :user, 'roadt'
 set :use_sudo, false
