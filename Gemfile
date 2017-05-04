@@ -1,5 +1,5 @@
-#source 'http://ruby.taobao.org'
-source 'http://venus/mirrors/ruby/'
+source 'https://rubygems.org'
+#source 'http://venus/mirrors/ruby/'
 
 gem 'rails', '3.2.13'
 
@@ -7,7 +7,7 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-gem 'mysql2'
+gem 'mysql2', '~> 0.3.10'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -19,7 +19,7 @@ gem 'mysql2'
   gem 'jquery-ui-rails', '4.0.2'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer', '0.10.2', :platforms => :ruby
+  gem 'therubyracer', :platforms => :ruby
   gem 'less-rails', '~> 2.3.2'
   gem 'twitter-bootstrap-rails', '2.2.6'
 
