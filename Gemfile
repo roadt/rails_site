@@ -88,3 +88,7 @@ gem 'simple-navigation', '~>3.11.0'
 gem 'factory_girl_rails', '~> 4.2.1'
 
 gem 'doorkeeper', '~>0.7.0'
+
+gem 'minitest'
+
+gem 'test-unit'
