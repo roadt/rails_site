@@ -1,4 +1,4 @@
-server 'blog.softmoon.us', :web, :app,  primary: true
+server 'blog.haoxuezhe.men', :web, :app,  primary: true
 
-set :repository,  "https://github.com/roadt/rails_blog.git"
+set :repository,  "https://github.com/roadt/rails_site/.git"
 set :rails_env, 'production'
